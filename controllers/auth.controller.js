@@ -12,7 +12,7 @@ exports.signup = (req, res) => {
     first: req.body.first,
     last: req.body.last,
     email: req.body.email,
-    roles:[""],
+    roles:["5eb6656a9e5adc002ab84865"],
     password: bcrypt.hashSync(req.body.password, 8)
   });
 
