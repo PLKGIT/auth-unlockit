@@ -33,7 +33,7 @@ class App extends Component {
       this.setState({
         currentUser: AuthService.getCurrentUser(),
         showTeacherBoard: user.roles.includes("ROLE_TEACHER"),
-        showAdminBoard: user.roles.includes("ROLE_ADMIN")
+        showAdminBoard: user.roles.includes(["ROLE_ADMIN","ROLE_TEACHER"])
       });
     }
   }

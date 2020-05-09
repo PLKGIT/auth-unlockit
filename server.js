@@ -24,7 +24,7 @@ const app = express();
 
 /*  CORS Options  */
 let corsOptions = {
-  origin: "https://auth-unlockit.herokuapp.com/"
+  origin: "https://auth-unlockit.herokuapp.com"
 };
 
 /*  Use CORS  */
@@ -109,7 +109,7 @@ function initialusers() {
   User.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new User ({
-        username: "adminuser",
+        username: "admin@unlockit.com",
         first: "Admin",
         last: "User",
         email: "admin@unlockit.com",

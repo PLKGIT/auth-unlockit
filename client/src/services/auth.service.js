@@ -1,17 +1,17 @@
 import axios from "axios";
 
-const API_URL = "https://auth-unlockit.herokuapp.com";
+const API_URL = 'https://auth-unlockit.herokuapp.com/api/auth';
 
 class AuthService {
   login(email, password) {
     return axios
-      .post(API_URL + "/api/auth/signin", {
+      .post(API_URL + '/signin', {
         email,
         password
       })
       .then(response => {
         if (response.data.accessToken) {
-          localStorage.setItem("user", JSON.stringify(response.data));
+          localStorage.setItem('user', JSON.stringify(response.data));
         }
 
         return response.data;
@@ -19,11 +19,11 @@ class AuthService {
   }
 
   logout() {
-    localStorage.removeItem("user");
+    localStorage.removeItem('user');
   }
 
   register(username, first, last, email, password) {
-    return axios.post(API_URL + "/api/auth/signup", {
+    return axios.post(API_URL + '/signup', {
       username, 
       first, 
       last, 
