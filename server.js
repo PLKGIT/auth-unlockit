@@ -1,18 +1,33 @@
-/*  Required  */
+/*  Require Express  */
 const express = require("express");
+
+/*  Require Mongoose */
+const mongoose = require("mongoose");
+
+/*  Require Body-Parser */
 const bodyParser = require("body-parser");
+
+/*  Require CORS */
 const cors = require("cors");
+
+/*  Require Bcrypt JS */
 const bcrypt = require("bcryptjs");
+
+/*  Require Path */
 const path = require('path');
+
+/*  Secure Variables  */
+require('dotenv').config();
 
 /*  Use Express  */
 const app = express();
 
-/*  CORS Options */
+/*  CORS Options  */
 let corsOptions = {
   origin: "https://auth-unlockit.herokuapp.com/"
 };
 
+/*  Use CORS  */
 app.use(cors(corsOptions));
 
 /*  Body-Parser Middleware  */
@@ -26,19 +41,18 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, 'client/build')));
 }
 
-/*  Models  */
+/*  Include Role and User Models  */
 const db = require("./models");
 const Role = db.role;
 const User = db.user;
 
-/*  Routes  */
+/*  Auth and User Routes  */
 require('./routes/auth.routes')(app);
 require('./routes/user.routes')(app);
 
 /*  Connect to MongoDB */
-
 db.mongoose
-  .connect(`mongodb+srv://admin2:P@ssword@cluster0-lhhfx.mongodb.net/test?retryWrites=true&w=majority`, {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/pocAuthentication", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
@@ -47,7 +61,7 @@ db.mongoose
     initial();
   })
   .catch(err => {
-    console.error("Connection error", err);
+    console.error("MongoDB connection error", err);
     process.exit();
   });
 
@@ -105,10 +119,8 @@ function initialusers() {
         if (err) {
           console.log("error", err);
         }
-
         console.log("added 'admin user' to user collection");
       });
-
     };
   });
 }
