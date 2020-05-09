@@ -32,7 +32,7 @@ class App extends Component {
     if (user) {
       this.setState({
         currentUser: AuthService.getCurrentUser(),
-        showTeacherBoard: user.roles.includes("ROLE_TEACHER", "ROLE_ADMIN"),
+        showTeacherBoard: user.roles.includes("ROLE_TEACHER"),
         showAdminBoard: user.roles.includes("ROLE_ADMIN")
       });
     }
@@ -62,23 +62,30 @@ class App extends Component {
               {showTeacherBoard && (
                 <li className="nav-item">
                   <Link to={"/teacher"} className="nav-link">
-                    Teacher Board
+                    Teachers
                   </Link>
                 </li>
               )}
 
               {showAdminBoard && (
+              <div className="navbar-nav ml-auto">
                 <li className="nav-item">
                   <Link to={"/admin"} className="nav-link">
-                    Admin Board
+                    Admins
                   </Link>
                 </li>
+                <li className="nav-item">
+                  <Link to={"/register"} className="nav-link">
+                    Register Users
+                  </Link>
+                </li>
+                </div>
               )}
 
               {currentUser && (
                 <li className="nav-item">
                   <Link to={"/user"} className="nav-link">
-                    User Board
+                    Students
                   </Link>
                 </li>
               )}
@@ -103,13 +110,7 @@ class App extends Component {
                   <Link to={"/login"} className="nav-link">
                     Login
                   </Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link to={"/register"} className="nav-link">
-                    Register Users
-                  </Link>
-                </li>
+                </li> 
               </div>
             )}
           </nav>

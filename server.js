@@ -114,7 +114,7 @@ function initialusers() {
         last: "User",
         email: "admin@unlockit.com",
         password: bcrypt.hashSync("p@ssw0rd", 8),
-        roles: [""]
+        roles: ["5eb6656b9e5adc002ab84867"]
       }).save(err => {
         if (err) {
           console.log("error", err);
