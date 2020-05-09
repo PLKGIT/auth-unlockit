@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const API_URL = "https://auth-unlockit.herokuapp.com/";
+const API_URL = "http://auth-unlockit.herokuapp.com";
 
 class AuthService {
   login(email, password) {
     return axios
-      .post(API_URL + 'api/auth/signin', {
+      .post(API_URL + '/api/auth/signin', {
         email,
         password
       })
@@ -23,7 +23,7 @@ class AuthService {
   }
 
   register(username, first, last, email, password) {
-    return axios.post(API_URL + 'api/auth/signup', {
+    return axios.post(API_URL + '/api/auth/signup', {
       username, 
       first, 
       last, 
