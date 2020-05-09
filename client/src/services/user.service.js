@@ -5,19 +5,19 @@ const API_URL = "https://auth-unlockit.herokuapp.com/";
 
 class UserService {
   getPublicContent() {
-    return axios.get(API_URL + '/api/auth/all');
+    return axios.get(API_URL + 'api/auth/all');
   }
 
   getUserBoard() {
-    return axios.get(API_URL + '/api/auth/user', { headers: authHeader() });
+    return axios.get(API_URL + 'api/auth/user', { headers: authHeader() });
   }
 
   getTeacherBoard() {
-    return axios.get(API_URL + '/api/auth/teacher', { headers: authHeader() });
+    return axios.get(API_URL + 'api/auth/teacher', { headers: authHeader() });
   }
 
   getAdminBoard() {
-    return axios.get(API_URL + '/api/auth/admin', { headers: authHeader() });
+    return axios.get(API_URL + 'api/auth/admin', { headers: authHeader() });
   }
 }
 
