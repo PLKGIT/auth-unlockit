@@ -49,7 +49,7 @@ require('./routes/user.routes')(app);
 
 /*  Connect to MongoDB */
 db.mongoose
-  .connect(process.env.MONGODB_URI || "mongodb+srv://localhost/pocAuthentication", {
+  .connect(process.env.MONGODB_URI || "mongodb://localhost/pocAuthentication", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })

@@ -1,5 +1,5 @@
 exports.allAccess = (req, res) => {
-  res.status(200).send("Lock It! Landing Page");
+  res.status(200).send("Landing Page");
 };
 
 exports.userBoard = (req, res) => {
