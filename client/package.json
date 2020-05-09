@@ -22,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
-  "proxy": "https://auth-unlockit.herokuapp.com",
+  "proxy": "https://auth-unlockit.herokuapp.com/",
   "eslintConfig": {
     "extends": "react-app"
   },

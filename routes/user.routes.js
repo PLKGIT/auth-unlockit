@@ -10,20 +10,22 @@ module.exports = function(app) {
     next();
   });
 
-  app.get(
-    "/api/test/all", controller.allAccess);
+  const API_URL = "https://auth-unlockit.herokuapp.com" + "/api/test";
+
+  app.get( 
+    API_URL + "/all", controller.allAccess);
 
   app.get(
-    "/api/test/user", 
+    API_URL + "/user", 
     [authJwt.verifyToken], controller.userBoard);
 
   app.get(
-    "/api/test/teacher",
+    API_URL + "/teacher",
     [authJwt.verifyToken, authJwt.isTeacher], controller.teacherBoard
   );
 
   app.get(
-    "/api/test/admin",
+    API_URL + "/admin",
     [authJwt.verifyToken, authJwt.isAdmin], controller.adminBoard
   );
 };
