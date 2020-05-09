@@ -1,23 +1,23 @@
 import axios from 'axios';
 import authHeader from './auth-header';
 
-const API_URL = "https://auth-unlockit.herokuapp.com";
+const API_URL = "https://auth-unlockit.herokuapp.com/api/auth/";
 
 class UserService {
   getPublicContent() {
-    return axios.get(API_URL + '/api/auth/all');
+    return axios.get(API_URL + 'all');
   }
 
   getUserBoard() {
-    return axios.get(API_URL + '/api/auth/user', { headers: authHeader() });
+    return axios.get(API_URL + 'user', { headers: authHeader() });
   }
 
   getTeacherBoard() {
-    return axios.get(API_URL + '/api/auth/teacher', { headers: authHeader() });
+    return axios.get(API_URL + 'teacher', { headers: authHeader() });
   }
 
   getAdminBoard() {
-    return axios.get(API_URL + '/api/auth/admin', { headers: authHeader() });
+    return axios.get(API_URL + 'admin', { headers: authHeader() });
   }
 }
 
