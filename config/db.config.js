@@ -5,5 +5,5 @@
 //   };
 
 module.exports = {
-  MONGODB_URI: "mongodb://root:passw0rd@ds259732.mlab.com:59732/heroku_l3xrwznt"
+  MONGODB_URI: "mongodb://root:p@ssw0rd>@ds139295.mlab.com:39295/heroku_h1zn702w"
 };

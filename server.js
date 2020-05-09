@@ -10,8 +10,7 @@ const app = express();
 
 /*  CORS Options */
 let corsOptions = {
-  origin: "https://localhost:3000"
-  // origin:"HEROKU_URL"
+  origin: "https://auth-unlockit.herokuapp.com/"
 };
 
 app.use(cors(corsOptions));
