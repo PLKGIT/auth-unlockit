@@ -48,21 +48,21 @@ class App extends Component {
     return (
       <Router>
         <div>
-          <nav className="navbar navbar-expand navbar-dark bg-dark">
+          <nav className="navbar navbar-expand navbar-dark bg-primary">
             <Link to={"/"} className="navbar-brand">
               Unlock It!
             </Link>
             <div className="navbar-nav mr-auto">
               <li className="nav-item">
                 <Link to={"/home"} className="nav-link">
-                  HOME
+                  Home
                 </Link>
               </li>
 
               {showTeacherBoard && (
                 <li className="nav-item">
                   <Link to={"/teacher"} className="nav-link">
-                    Teachers
+                    Teacher
                   </Link>
                 </li>
               )}
@@ -70,7 +70,7 @@ class App extends Component {
               {showAdminBoard && (
                 <li className="nav-item">
                   <Link to={"/admin"} className="nav-link">
-                    Admins
+                    Admin
                   </Link>
                 </li>
               )}
@@ -78,7 +78,7 @@ class App extends Component {
               {currentUser && (
                 <li className="nav-item">
                   <Link to={"/user"} className="nav-link">
-                    Students
+                    Student
                   </Link>
                 </li>
               )}
@@ -107,7 +107,7 @@ class App extends Component {
 
                 <li className="nav-item">
                   <Link to={"/register"} className="nav-link">
-                    Register Users
+                    Register
                   </Link>
                 </li>
               </div>

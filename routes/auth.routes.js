@@ -10,7 +10,7 @@ module.exports = function(app) {
     next();
   });
 
-  const API_URL = "https://auth-unlockit.herokuapp.com" + "/api/auth";
+  const API_URL = "https://auth-unlockit.herokuapp.com/api/auth";
   app.post(
     API_URL + "/signup",
     [
