@@ -10,9 +10,8 @@ module.exports = function(app) {
     next();
   });
 
-  const API_URL = "https://auth-unlockit.herokuapp.com/api/auth";
   app.post(
-    API_URL + "/signup",
+    "/api/auth/signup",
     [
       verifySignUp.checkDuplicateUsernameOrEmail,
       verifySignUp.checkRolesExisted
@@ -21,5 +20,5 @@ module.exports = function(app) {
   );
 
   app.post(
-    API_URL + "/signin", controller.signin);
+    "/api/auth/signin", controller.signin);
 };

@@ -1,9 +1,6 @@
 /*  Require Express  */
 const express = require("express");
 
-/*  Require Mongoose */
-const mongoose = require("mongoose");
-
 /*  Require Body-Parser */
 const bodyParser = require("body-parser");
 
@@ -23,7 +20,7 @@ require('dotenv').config();
 const app = express();
 
 /*  CORS Options  */
-let corsOptions = {
+var corsOptions = {
   origin: "https://auth-unlockit.herokuapp.com/"
 };
 
@@ -52,7 +49,7 @@ require('./routes/user.routes')(app);
 
 /*  Connect to MongoDB */
 db.mongoose
-  .connect(process.env.MONGODB_URI || "mongodb://localhost/pocAuthentication", {
+  .connect(process.env.MONGODB_URI || "mongodb+srv://localhost/pocAuthentication", {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
